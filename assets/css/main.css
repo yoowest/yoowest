@@ -2879,8 +2879,8 @@
 
 				#header .logo .symbol img {
 					display: block;
-					width: 64px;
-					height:64px;
+					width: 10em;
+					height:10em;
 				}
 
 		#header nav {
