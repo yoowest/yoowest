@@ -16,7 +16,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('about', {
              url: '/about',
             templateUrl: 'about.html'
-        });
+        })
 	
 	
 	.state('Blog', {
