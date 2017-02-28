@@ -4,7 +4,7 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html ng-app="app">
 	<head>
 		<title>Okursal</title>
 		<meta charset="utf-8" />
@@ -13,22 +13,39 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+		<script>
+		var app = angular.module ("app", ["ui-router"]);
+
+			
+			app.config(function($stateProvider, $urlRouterProvider){
+			
+			$urlRouterProvider.otherwise("/index.html") ;
+				
+				$stateProvider
+				.state("/",{
+			         url:"/",
+			     template:"<div class='headermain'><ul><li><a href='#'>Anasayfa</a></li><li><a href='#'>Yazılar</a></li><li><a href='#'>Güncel</a></li><li><a href='#'>Deneme</a></li><li><a href='#'>Araştırma</a></li><li><a href='#'>Konuk Söyleşileri</a></li><li><a href='#'>Hakkımızda</a></li><li><a href='#'>İletişim</a></li></ul></div>"	       
+					       })
+			
+			
+			});
+
+                app.controller ("deneme", function ($scope){
+		
+		
+		
+		
+		});
+		
+		</script>
+		
 	</head>
-	<body>
+	<body ng-controller="deneme">
 	
 	
-<div class="headermain">
-<ul>
-<li><a href="#">Anasayfa</a></li>
-<li><a href="#">Yazılar</a></li>
-<li><a href="#">Güncel</a></li>
-<li><a href="#">Deneme</a></li>
-<li><a href="#">Araştırma</a></li>
-<li><a href="#">Konuk Söyleşileri</a></li>
-<li><a href="#">Hakkımızda</a></li>
-<li><a href="#">İletişim</a></li>
-</ul>
-</div>	
+              <ui-view></ui-view>
 	
 	
 	
